@@ -1,0 +1,123 @@
+import turtle
+
+#Ознакомление и правила игры:
+print("Здравствуйте, коллеги! Вы уже помогли Санте со всем, вот только беда! Санта проронил несколько подарков! Вы должны помочь Санте и подобрать все подарки, но будьте осторожны: Санта проронил подарки, когда пролетал через лабиринт, кишущий опасностями,но надо торопиться:дети заждались!")
+#код для лабиринта
+w = turtle.Screen()
+w.setup(width=870,height=660)
+w.bgcolor("green")
+
+def zakr(x, y, a, b): # Создаем функцию закраски
+    pen.penup()
+    pen.goto(x,y)
+    pen.pendown()
+    for i in range(b - 1):
+        pen.forward(a)
+        pen.backward(a)
+        pen.right(90)
+        pen.penup()
+        pen.forward(20)
+        pen.left(90)
+        pen.pendown()
+    pen.penup()
+    pen.left(90)
+    pen.forward(20)
+    pen.right(90)
+    pen.forward(a)
+    pen.left(90)
+    pen.pendown()
+    pen.forward(20*b - 20)
+    pen.left(90)
+    pen.forward(a)
+    pen.left(90)
+    pen.forward(20*b - 20)
+pen = turtle.Turtle()
+pen.penup()
+pen.speed(1000)
+pen.color("red")
+pen.pensize(20)
+pen.goto(-435, 330) #Создаем лабиринт
+pen.pendown()
+pen.goto(-435, -330)
+pen.goto(435, -330)
+pen.goto(435, 330)
+pen.goto(-435, 330)
+pen.goto(-235, 330)
+pen.goto(-235, -230)
+pen.penup()
+pen.goto(-435, 110)
+pen.pendown()
+pen.forward(100)
+zakr(-435, 90, 100, 18)
+pen.penup()
+pen.goto(200,-130)
+pen.pendown()
+pen.goto(0,-130)
+pen.goto(0,230)
+pen.goto(-100,230)
+pen.goto(-100,-230)
+pen.goto(300,-230)
+pen.goto(300,-330)
+pen.goto(300, 230)
+pen.right(90)
+zakr(200, -30, 100, 20)
+turtle = turtle.Turtle("turtle")
+turtle.penup()
+turtle.speed(1000)
+turtle.goto(-405, 300)
+turtle.color("yellow")
+
+def on():
+    if turtle.ycor() > 310:
+        turtle.goto(-405,300)
+    elif turtle.ycor() < -310:
+        turtle.goto(-405,300)
+    elif turtle.xcor() > 415:
+        turtle.goto(-405,300)
+    elif turtle.xcor() < -415:
+        turtle.goto(-405,300)
+    else:
+        turtle.forward(15)
+def rihgtt():
+    turtle.right(10)
+def lefft():
+    turtle.left(10)
+def downn():
+    if turtle.ycor() > 310:
+        turtle.goto(-405,300)
+    elif turtle.ycor() < -310:
+        turtle.goto(-405,300)
+    elif turtle.xcor() > 415:
+        turtle.goto(-405,300)
+    elif turtle.xcor() < -415:
+        turtle.goto(-405,300)
+    else:
+        turtle.backward(15)
+w.listen()
+w.onkey(on, "W")
+w.onkey(rihgtt, "D")
+w.onkey(lefft, "A")
+w.onkey(downn, "S")
+w.onkey(on, "Up")
+w.onkey(rihgtt, "Right")
+w.onkey(lefft, "Left")
+w.onkey(downn, "Down")
+while True:
+    w.update()
+    if turtle.ycor() > -240 and turtle.ycor() < 120 and turtle.xcor() > -435 and turtle.xcor() < -315:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > -240 and turtle.ycor() < 340 and turtle.xcor() > -245 and turtle.xcor() < -215:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > -240 and turtle.ycor() < 240 and turtle.xcor() > -110 and turtle.xcor() < -90:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > 220 and turtle.ycor() < 240 and turtle.xcor() > -110 and turtle.xcor() < 10:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > -140 and turtle.ycor() < 240 and turtle.xcor() > -10 and turtle.xcor() < 10:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > -140 and turtle.ycor() < -120 and turtle.xcor() > -10 and turtle.xcor() < 210:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > -240 and turtle.ycor() < -220 and turtle.xcor() > -110 and turtle.xcor() < 310:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > -340 and turtle.ycor() < 240 and turtle.xcor() > 290 and turtle.xcor() < 310:
+        turtle.goto(-405,300)
+    elif turtle.ycor() > -60 and turtle.ycor() < 330 and turtle.xcor() > 90 and turtle.xcor() < 200:
